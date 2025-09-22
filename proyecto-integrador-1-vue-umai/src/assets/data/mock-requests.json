@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "city": "Buenos Aires",
+        "date": "2025-10-05",
+        "people": 2,
+        "note": "Pareja en viaje de placer",
+        "offers": []
+    },
+    {
+        "id": 2,
+        "city": "Mendoza",
+        "date": "2025-10-12",
+        "people": 4,
+        "note": "Familia con dos niños",
+        "offers": []
+    }
+]

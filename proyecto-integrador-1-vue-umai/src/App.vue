@@ -4,7 +4,6 @@
 // el código dentro del bloque <script setup> se ejecuta en el contexto del componente
 // y las variables definidas son automáticamente reactivas y accesibles en el template
 // ideal para componentes simples y funcionales
-import { ref } from 'vue'  // importamos la función ref para crear referencias reactivas
 import Header from './components/Header.vue'
 
 </script>

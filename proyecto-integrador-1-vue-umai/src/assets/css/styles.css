@@ -1,0 +1,202 @@
+/* ---------- Variables de color ---------- */
+:root {
+    --color-bg: #f7f8fc;
+    --color-primary: #4a90e2;
+    --color-primary-dark: #357ab7;
+    --color-text: #222;
+    --color-card-bg: #fff;
+    --color-border: #e5e7eb;
+    --color-shadow: 0 4px 24px rgba(74, 144, 226, 0.07);
+    --color-shadow-hover: 0 8px 32px rgba(74, 144, 226, 0.13);
+    --radius: 1em;
+}
+
+/* ---------- Reset básico ---------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ---------- Contenedor general ---------- */
+#app {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2em 1em 3em 1em;
+}
+
+/* ---------- Títulos ---------- */
+h1,
+h2,
+h3 {
+    color: var(--color-primary-dark);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.2em;
+}
+
+h2 {
+    font-size: 1.4em;
+}
+
+h3 {
+    font-size: 1.1em;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    box-shadow: var(--color-shadow);
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.card:hover {
+    transform: translateY(-4px) scale(1.015);
+    box-shadow: var(--color-shadow-hover);
+}
+
+/* ---------- Botones ---------- */
+.btn {
+    display: inline-block;
+    padding: 0.7em 1.5em;
+    border-radius: 0.7em;
+    background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary));
+    color: #fff;
+    font-weight: 600;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.08);
+    transition: background 0.18s, box-shadow 0.18s;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+    box-shadow: 0 4px 16px rgba(74, 144, 226, 0.13);
+}
+
+/* ---------- Listas ---------- */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li+li {
+    margin-top: 0.5em;
+}
+
+/* ---------- Grilla de hoteles ---------- */
+.hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 2em;
+    margin-top: 1.5em;
+}
+
+/* ---------- Formularios y listas ---------- */
+.request-form,
+.hotel-list,
+.request-list {
+    background: var(--color-card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--color-shadow);
+    padding: 2em 1.5em;
+    margin-bottom: 2em;
+    border: 1px solid var(--color-border);
+}
+
+.request-form input,
+.request-form textarea,
+.request-form button {
+    border: 1px solid var(--color-border);
+    border-radius: 0.5em;
+    padding: 0.7em;
+    margin-top: 0.3em;
+    font-size: 1em;
+    background: #f7f8fc;
+    transition: border 0.2s;
+}
+
+.request-form input:focus,
+.request-form textarea:focus {
+    border: 1.5px solid var(--color-primary);
+    outline: none;
+}
+
+.request-form button,
+.actions button {
+    margin-top: 1em;
+}
+
+.hotel-item,
+.request-item {
+    background: #f9fafb;
+    border-radius: 0.8em;
+    padding: 1.2em 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 1px 4px rgba(74, 144, 226, 0.06);
+    border: 1px solid var(--color-border);
+    transition: box-shadow 0.18s;
+}
+
+.hotel-item:hover,
+.request-item:hover {
+    box-shadow: 0 4px 16px rgba(74, 144, 226, 0.13);
+}
+
+/* ---------- Mensajes de formulario ---------- */
+.form-msg {
+    margin-top: 0.7em;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 0.5em;
+    padding: 0.5em 0.7em;
+}
+
+.error {
+    color: #b91c1c;
+    background: #fee2e2;
+    border: 1px solid #fca5a5;
+}
+
+.success {
+    color: #166534;
+    background: #bbf7d0;
+    border: 1px solid #4ade80;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 700px) {
+    #app {
+        padding: 1em 0.2em 2em 0.2em;
+    }
+
+    .hotel-grid {
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
+    .request-form,
+    .hotel-list,
+    .request-list {
+        padding: 1.2em 0.7em;
+    }
+}

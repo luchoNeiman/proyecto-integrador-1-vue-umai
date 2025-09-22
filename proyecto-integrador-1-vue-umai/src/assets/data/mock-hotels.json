@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Hotel Paraíso",
+    "location": "Buenos Aires",
+    "price": 120,
+    "image": "/images/hotel1.jpg",
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "name": "Hotel Sol",
+    "location": "Mendoza",
+    "price": 90,
+    "image": "/images/hotel2.jpg",
+    "rating": 4.0
+  },
+  {
+    "id": 3,
+    "name": "Mar Azul",
+    "location": "Mar del Plata",
+    "price": 110,
+    "image": "/images/hotel3.jpg",
+    "rating": 4.2
+  },
+  {
+    "id": 4,
+    "name": "Cielo Andino",
+    "location": "Mendoza",
+    "price": 150,
+    "image": "/images/hotel4.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 5,
+    "name": "Beach Paradise",
+    "location": "Miami",
+    "price": 200,
+    "image": "/images/hotel5.jpg",
+    "rating": 4.8
+  }
+]
