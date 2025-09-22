@@ -10,15 +10,8 @@ import Header from './components/Header.vue'
 
 
 <template>
-  <div>
+  <main>
     <Header /> 
     <router-view />
-  </div>
+  </main>
 </template>
-
-<style scoped>
-main {
-  text-align: center;
-  padding: 2rem;
-}
-</style>

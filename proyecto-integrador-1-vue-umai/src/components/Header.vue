@@ -15,11 +15,7 @@
 </template>
 
 <style scoped>
-* {
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
+
 .header {
     background: linear-gradient(90deg, #357ab7 0%, #4a90e2 100%);
     padding: 1.5em 0;
