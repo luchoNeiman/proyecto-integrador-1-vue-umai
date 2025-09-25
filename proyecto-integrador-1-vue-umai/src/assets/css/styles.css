@@ -30,7 +30,7 @@ body {
 
 /* ---------- Header ---------- */
 header {
-    background: linear-gradient(90deg, #357ab7 0%, #4a90e2 100%);
+    background: linear-gradient(90deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
     padding: 1.5em 0;
     color: var(--color-card-bg);
     text-align: center;

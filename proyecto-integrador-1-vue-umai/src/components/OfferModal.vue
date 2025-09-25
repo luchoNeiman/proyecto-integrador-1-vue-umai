@@ -23,14 +23,31 @@ function onSubmit() {
 
 <template>
     <div v-if="visible" class="offer-modal-backdrop">
-        <div class="offer-modal-box">
-            <h3>Crear oferta para {{ requestCity }}</h3>
-            <label>Precio (USD): <input type="number" v-model.number="price" /></label>
-            <label>Mensaje: <input v-model="message" /></label>
-            <div class="offer-modal-actions">
-                <button @click="onSubmit">Enviar</button>
-                <button @click="$emit('close')">Cancelar</button>
-            </div>
+        <div class="offer-modal-box p-4">
+            <h3 class="mb-3 text-center">
+                <i class="bi bi-cash-coin me-2 text-primary"></i>
+                Crear oferta para <span class="fw-bold">{{ requestCity }}</span>
+            </h3>
+            <form @submit.prevent="onSubmit">
+                <div class="mb-3">
+                    <label for="offer-price" class="form-label">Precio (USD)</label>
+                    <input id="offer-price" type="number" class="form-control" v-model.number="price" min="1"
+                        placeholder="Ej: 120" autofocus />
+                </div>
+                <div class="mb-4">
+                    <label for="offer-message" class="form-label">Mensaje</label>
+                    <input id="offer-message" type="text" class="form-control" v-model="message" maxlength="80"
+                        placeholder="Ej: ¡Incluye desayuno!" />
+                </div>
+                <div class="d-flex justify-content-end gap-2">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-send"></i> Enviar
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary" @click="$emit('close')">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </template>
