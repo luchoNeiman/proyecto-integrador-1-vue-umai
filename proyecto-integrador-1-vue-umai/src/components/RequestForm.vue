@@ -9,6 +9,8 @@ const newRequest = ref({  //Crea un objeto de referencia reactiva para almacenar
     note: ''
 })
 
+//Una referencia reactiva significa que si su valor cambia, Vue se dará cuenta y actualizará el DOM en consecuencia.
+
 const error = ref('')  //Crea una referencia reactiva para almacenar mensajes de error o éxito
 
 const store = useMainStore()  //Accede al store de Pinia ubicado en src/store/index.js
@@ -21,10 +23,10 @@ function addRequest() {  //Función para manejar el envío del formulario
         return
     }
 
-    store.addRequest({
-        ...newRequest.value,
+    store.addRequest({  //Agrega la nueva solicitud al store llamando a la acción addRequest definida en el store
+        ...newRequest.value,  //Usa el operador spread para copiar las propiedades del objeto newRequest
         id: Date.now()
-    })  //Agrega la nueva solicitud al store llamando a la acción addRequest definida en el store
+    })
 
     newRequest.value = { city: '', date: '', people: 1, note: '' } //Resetea el formulario
 

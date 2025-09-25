@@ -4,7 +4,7 @@
     "name": "Hotel Paraíso",
     "location": "Buenos Aires",
     "price": 120,
-    "image": "/images/hotel1.jpg",
+    "image": "/images/remera.jpg",
     "rating": 4.5
   },
   {
@@ -12,7 +12,7 @@
     "name": "Hotel Sol",
     "location": "Mendoza",
     "price": 90,
-    "image": "/images/hotel2.jpg",
+    "image": "/images/remera.jpg",
     "rating": 4.0
   },
   {
@@ -20,7 +20,7 @@
     "name": "Mar Azul",
     "location": "Mar del Plata",
     "price": 110,
-    "image": "/images/hotel3.jpg",
+    "image": "/images/remera.jpg",
     "rating": 4.2
   },
   {
@@ -28,7 +28,7 @@
     "name": "Cielo Andino",
     "location": "Mendoza",
     "price": 150,
-    "image": "/images/hotel4.jpg",
+    "image": "/images/remera.jpg",
     "rating": 4.7
   },
   {
@@ -36,7 +36,7 @@
     "name": "Beach Paradise",
     "location": "Miami",
     "price": 200,
-    "image": "/images/hotel5.jpg",
+    "image": "/images/remera.jpg",
     "rating": 4.8
   },
   {
@@ -44,7 +44,7 @@
     "name": "Mountain Retreat",
     "location": "Aspen",
     "price": 250,
-    "image": "/images/hotel6.jpg",
+    "image": "/images/remera.jpg",
     "rating": 4.9
   },
   {
@@ -52,7 +52,7 @@
     "name": "City Lights Hotel",
     "location": "New York",
     "price": 180,
-    "image": "/images/hotel7.jpg",
+    "image": "/images/remera.jpg",
     "rating": 4.6
   }
 ]

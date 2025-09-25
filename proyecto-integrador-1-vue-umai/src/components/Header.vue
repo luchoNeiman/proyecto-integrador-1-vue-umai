@@ -1,5 +1,5 @@
 <template>
-    <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm py-3">
+    <header class="navbar navbar-expand-lg navbar-dark shadow-sm py-3 sticky-top">
         <div class="container">
             <div class="d-flex align-items-center gap-3">
                 <i class="bi bi-moon-stars-fill fs-2"></i>
@@ -12,9 +12,11 @@
                 <ul class="navbar-nav flex-row gap-2">
                     <li class="nav-item link">
                         <router-link to="/" class="nav-link px-3" active-class="active" exact>Cliente</router-link>
+                        <!-- exact para que solo se active en la ruta raíz -->
                     </li>
                     <li class="nav-item link tagline">
                         <router-link to="/hotel" class="nav-link px-3" active-class="active">Hotel</router-link>
+                        <!-- active-class para definir la clase CSS que se aplicará cuando la ruta esté activa -->
                     </li>
                 </ul>
             </nav>

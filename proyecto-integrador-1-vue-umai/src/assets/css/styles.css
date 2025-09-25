@@ -65,6 +65,15 @@ header .link a.router-link-exact-active {
     text-decoration: underline;
 }
 
+/* ---------- Footer ---------- */
+footer {
+    background: var(--color-primary-dark);
+    color: var(--color-card-bg);
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}
+
 /* ---------- Main wrapper ---------- */
 main {
     padding: 2rem;
@@ -208,7 +217,8 @@ li+li {
 
 .visually-hidden {
     position: absolute !important;
-    height: 1px; width: 1px;
+    height: 1px;
+    width: 1px;
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
@@ -346,6 +356,7 @@ li+li {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 700px) {
+
     .request-form,
     .hotel-list,
     .request-list {

@@ -1,10 +1,10 @@
 <script setup>
 import { defineProps } from 'vue'
 
-const props = defineProps({
+const props = defineProps({  //define las props que el componente recibe
     hotel: {
-        type: Object,
-        required: true
+        type: Object,  //define que la prop hotel es un objeto
+        required: true  //define que la prop hotel es obligatoria
     }
 })
 </script>

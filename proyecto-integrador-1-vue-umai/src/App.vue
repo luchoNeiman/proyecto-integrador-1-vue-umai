@@ -15,4 +15,8 @@ import Header from './components/Header.vue'
   <main>
     <router-view />
   </main>
+
+  <footer class="footer text-center py-3">
+    <p class="m-0">Hecho con ❤️ por Luciano Neiman</p>
+  </footer>
 </template>
