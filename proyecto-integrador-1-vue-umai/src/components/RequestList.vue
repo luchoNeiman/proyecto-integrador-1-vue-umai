@@ -44,7 +44,7 @@ function submitOffer(requestId, offer) {
                 </ul>
             </div>
             <div class="actions">
-                <button class="btn" @click="openOfferModal(req.id)">Ofertar</button>
+                <button class="main-btn" @click="openOfferModal(req.id)">Ofertar</button>
             </div>
             <OfferModal :visible="openModalFor === req.id" :requestCity="req.city" @close="closeModal"
                 @submit="offer => submitOffer(req.id, offer)" />

@@ -10,10 +10,10 @@
             </div>
             <nav class="ms-auto">
                 <ul class="navbar-nav flex-row gap-2">
-                    <li class="nav-item">
+                    <li class="nav-item link">
                         <router-link to="/" class="nav-link px-3" active-class="active" exact>Cliente</router-link>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item link tagline">
                         <router-link to="/hotel" class="nav-link px-3" active-class="active">Hotel</router-link>
                     </li>
                 </ul>

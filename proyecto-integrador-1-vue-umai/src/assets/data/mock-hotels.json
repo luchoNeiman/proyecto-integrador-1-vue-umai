@@ -38,5 +38,21 @@
     "price": 200,
     "image": "/images/hotel5.jpg",
     "rating": 4.8
+  },
+  {
+    "id": 6,
+    "name": "Mountain Retreat",
+    "location": "Aspen",
+    "price": 250,
+    "image": "/images/hotel6.jpg",
+    "rating": 4.9
+  },
+  {
+    "id": 7,
+    "name": "City Lights Hotel",
+    "location": "New York",
+    "price": 180,
+    "image": "/images/hotel7.jpg",
+    "rating": 4.6
   }
 ]
