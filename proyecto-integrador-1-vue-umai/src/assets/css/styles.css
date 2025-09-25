@@ -108,6 +108,12 @@ h3 {
 }
 
 /* ---------- Cards ---------- */
+.client-requests .card-clientRequestList {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .hotel-card {
     display: flex;
     gap: 1em;

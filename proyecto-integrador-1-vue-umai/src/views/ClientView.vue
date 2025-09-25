@@ -1,8 +1,9 @@
 <script setup>
 import { ref } from 'vue'
-import { useMainStore } from '@/store'
+import { useMainStore } from '@/store/store'
 import RequestForm from '@/components/RequestForm.vue'
 import HotelCard from '@/components/HotelCard.vue'
+import ClientRequestList from '@/components/ClientRequestList.vue'
 
 const store = useMainStore()
 </script>
@@ -18,5 +19,10 @@ const store = useMainStore()
                 <HotelCard v-for="hotel in store.hotels" :key="hotel.id" :hotel="hotel" />
             </div>
         </div>
+
+    </section>
+
+    <section>
+        <ClientRequestList :requests="store.requests" />
     </section>
 </template>

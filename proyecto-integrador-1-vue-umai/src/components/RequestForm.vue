@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { useMainStore } from '@/store'  //importa el store de Pinia creado en src/store/index.js
+import { useMainStore } from '@/store/store'  //importa el store de Pinia creado en src/store/index.js
 
 const newRequest = ref({  //Crea un objeto de referencia reactiva para almacenar los datos del formulario
     city: '',

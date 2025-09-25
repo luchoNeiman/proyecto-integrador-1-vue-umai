@@ -1,5 +1,5 @@
 <script setup>
-import { useMainStore } from '@/store'
+import { useMainStore } from '@/store/store'
 import RequestList from '@/components/RequestList.vue';
 
 const store = useMainStore()
