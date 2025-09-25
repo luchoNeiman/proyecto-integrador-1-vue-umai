@@ -1,21 +1,21 @@
 <script setup>
 import { defineProps, defineEmits, ref } from 'vue'
 
-const props = defineProps({
+const props = defineProps({  // Props recibidos del componente padre
     visible: Boolean,
-    requestCity: String
+    requestCity: String  // Ciudad del request para mostrar en el modal
 })
-const emit = defineEmits(['close', 'submit'])
+const emit = defineEmits(['close', 'submit'])  // Eventos que el componente puede emitir
 
-const price = ref(null)
-const message = ref('')
+const price = ref(null)  // Precio ingresado por el usuario
+const message = ref('')  // Mensaje opcional ingresado por el usuario
 
-function onSubmit() {
+function onSubmit() {  // Maneja el envío del formulario
     if (!price.value) {
         alert('Ingresá un precio.')
         return
     }
-    emit('submit', { price: Number(price.value), message: message.value })
+    emit('submit', { price: Number(price.value), message: message.value })  // Emitir evento con datos de la oferta
     price.value = null
     message.value = ''
 }
