@@ -1,11 +1,13 @@
 <script setup>
-import { ref } from 'vue'
+import { computed } from 'vue'
 import { useMainStore } from '@/store/store'
 import RequestForm from '@/components/RequestForm.vue'
 import HotelCard from '@/components/HotelCard.vue'
 import ClientRequestList from '@/components/ClientRequestList.vue'
 
 const store = useMainStore()
+const hotels = computed(() => store.hotels)
+const requests = computed(() => store.requests)
 </script>
 
 <template>
@@ -16,13 +18,13 @@ const store = useMainStore()
         <div>
             <h2>Hoteles disponibles</h2>
             <div class="hotel-grid d-flex flex-wrap gap-3">
-                <HotelCard v-for="hotel in store.hotels" :key="hotel.id" :hotel="hotel" />
+                <HotelCard v-for="hotel in hotels" :key="hotel.id" :hotel="hotel" />
             </div>
         </div>
 
     </section>
 
     <section>
-        <ClientRequestList :requests="store.requests" />
+        <ClientRequestList :requests="requests" />
     </section>
 </template>

@@ -21,5 +21,7 @@ export const useMainStore = defineStore('main', {
                 req.offers.push({ ...offer, id: Date.now() })
             }
         }
-    }
+    },
+    persist: true // <--- ¡Esto es lo que activa la persistencia!
+
 })
