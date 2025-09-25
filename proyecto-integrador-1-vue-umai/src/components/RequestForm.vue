@@ -1,70 +1,72 @@
 <script setup>
 import { ref } from 'vue'
+import { useMainStore } from '@/store'  //importa el store de Pinia creado en src/store/index.js
 
-const newRequest = ref({
+const newRequest = ref({  //Crea un objeto de referencia reactiva para almacenar los datos del formulario
     city: '',
     date: '',
     people: 1,
     note: ''
 })
 
-const error = ref('')
+const error = ref('')  //Crea una referencia reactiva para almacenar mensajes de error o éxito
 
+const store = useMainStore()  //Accede al store de Pinia ubicado en src/store/index.js
 
-function addRequest() {
+function addRequest() {  //Función para manejar el envío del formulario
     error.value = ''
+
     if (!newRequest.value.city.trim() || !newRequest.value.date || !newRequest.value.people) {
         error.value = 'Completá ciudad, fecha y personas.'
         return
     }
+    
+    store.addRequest({
+        ...newRequest.value,
+        id: Date.now()
+    })  //Agrega la nueva solicitud al store llamando a la acción addRequest definida en el store
 
-    const stored = JSON.parse(localStorage.getItem('requests') || '[]')
-    const request = {
-        id: Date.now(),
-        city: newRequest.value.city.trim(),
-        date: newRequest.value.date,
-        people: Number(newRequest.value.people),
-        note: newRequest.value.note,
-        offers: []
-    }
+    newRequest.value = { city: '', date: '', people: 1, note: '' } //Resetea el formulario
 
-    stored.push(request)
-    localStorage.setItem('requests', JSON.stringify(stored))
-    window.dispatchEvent(new CustomEvent('request-added'))
-
-    newRequest.value = { city: '', date: '', people: 1, note: '' }
     error.value = '¡Solicitud enviada! ✅'
-    setTimeout(() => { error.value = '' }, 2000)
+    setTimeout(() => { error.value = '' }, 2000) //Limpia el mensaje de éxito después de 2 segundos
 }
 </script>
 
 <template>
-    <form class="request-form" @submit.prevent="addRequest" autocomplete="off">
-        <h2>Publicar solicitud de hospedaje</h2>
+    <form class="request-form" @submit.prevent="addRequest" autocomplete="off" aria-labelledby="request-form-title"
+        novalidate>
+        <div>
 
-        <label>
-            Ciudad
-            <input v-model="newRequest.city" placeholder="Ej: Buenos Aires" required />
-        </label>
+            <h2 id="request-form-title">Publicar solicitud de hospedaje</h2>
+            <div class="form-group">
+                <label for="city">Ciudad</label>
+                <input id="city" name="city" type="text" v-model="newRequest.city" placeholder="Ej: Buenos Aires"
+                    inputmode="text" autocomplete="address-level2" aria-required="true" aria-describedby="city-help" />
+            </div>
 
-        <label>
-            Fecha
-            <input type="date" v-model="newRequest.date" required />
-        </label>
+            <div class="form-group">
+                <label for="date">Fecha</label>
+                <input id="date" name="date" type="date" v-model="newRequest.date" autocomplete="off"
+                    aria-required="true" />
+            </div>
 
-        <label>
-            Personas
-            <input type="number" min="1" v-model.number="newRequest.people" required />
-        </label>
+            <div class="form-group">
+                <label for="people">Personas</label>
+                <input id="people" name="people" type="number" min="1" v-model.number="newRequest.people"
+                    inputmode="numeric" aria-required="true" />
+            </div>
 
-        <label>
-            Comentario
-            <textarea v-model="newRequest.note" placeholder="¿Algo que quieras aclarar? (opcional)"></textarea>
-        </label>
+            <div class="form-group">
+                <label for="note">Comentario</label>
+                <textarea id="note" name="note" v-model="newRequest.note"
+                    placeholder="¿Algo que quieras aclarar? (opcional)" rows="2" autocomplete="off"></textarea>
+            </div>
 
-        <button class="btn" type="submit">Enviar solicitud</button>
-        <div v-if="error"
-            :class="{ 'error': error !== '¡Solicitud enviada! ✅', 'success': error === '¡Solicitud enviada! ✅' }"
-            class="form-msg">{{ error }}</div>
+            <button class="btn" type="submit" aria-label="Enviar solicitud">Enviar solicitud</button>
+            <div v-if="error"
+                :class="{ 'error': error !== '¡Solicitud enviada! ✅', 'success': error === '¡Solicitud enviada! ✅' }"
+                class="form-msg" role="alert" aria-live="polite">{{ error }}</div>
+        </div>
     </form>
 </template>
